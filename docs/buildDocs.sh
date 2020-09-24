@@ -95,59 +95,59 @@ git checkout master
 # Update GitHub Pages #
 #######################
  
-git config --global user.name "${GITHUB_ACTOR}"
-git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+#git config --global user.name "${GITHUB_ACTOR}"
+#git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
  
-pushd "${docroot}"
+#pushd "${docroot}"
  
 # don't bother maintaining history; just generate fresh
-git init
-git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-git checkout -b gh-pages
+#git init
+#git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+#git checkout -b gh-pages
  
 # add .nojekyll to the root so that github won't 404 on content added to dirs
 # that start with an underscore (_), such as our "_content" dir..
-touch .nojekyll
+#touch .nojekyll
  
 # add redirect from the docroot to our default docs language/version
-cat > index.html <<EOF
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>helloWorld Docs</title>
-      <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/master/'" />
-   </head>
-   <body>
-      <p>Please wait while you're redirected to our <a href="/${REPO_NAME}/en/master/">documentation</a>.</p>
-   </body>
-</html>
-EOF
+#cat > index.html <<EOF
+#<!DOCTYPE html>
+#<html>
+#   <head>
+#      <title>helloWorld Docs</title>
+#      <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/master/'" />
+#   </head>
+#   <body>
+#      <p>Please wait while you're redirected to our <a href="/${REPO_NAME}/en/master/">documentation</a#>.</p>
+#   </body>
+#</html>
+#EOF
  
 # Add README
-cat > README.md <<EOF
-# GitHub Pages Cache
- 
-Nothing to see here. The contents of this branch are essentially a cache that's not intended to be viewed on github.com.
- 
- 
-If you're looking to update our documentation, check the relevant development branch's 'docs/' dir.
- 
-For more information on how this documentation is built using Sphinx, Read the Docs, and GitHub Actions/Pages, see:
- 
- * https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1
-EOF
- 
+#cat > README.md <<EOF
+## GitHub Pages Cache
+# 
+#Nothing to see here. The contents of this branch are essentially a cache that's not intended to be view#ed on github.com.
+# 
+# 
+#If you're looking to update our documentation, check the relevant development branch's 'docs/' dir.
+# 
+#For more information on how this documentation is built using Sphinx, Read the Docs, and GitHub Actions#/Pages, see:
+# 
+# * https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1
+#EOF
+# 
 # copy the resulting html pages built from sphinx above to our new git repo
-git add .
+#git add .
  
 # commit all the new files
-msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
-git commit -am "${msg}"
+#msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
+#git commit -am "${msg}"
  
 # overwrite the contents of the gh-pages branch on our github.com repo
-git push deploy gh-pages --force
+#git push deploy gh-pages --force
  
-popd # return to main repo sandbox root
+#popd # return to main repo sandbox root
  
 # exit cleanly
 exit 0

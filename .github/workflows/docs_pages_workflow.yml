@@ -37,3 +37,14 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: "docs/buildDocs.sh"
       shell: bash
+
+    - name: Deploy
+      if: "contains(env.DEPLOY_DOCS, matrix.python-version)"
+      uses: crazy-max/ghaction-github-pages@v1
+      with:
+        keep_history: true
+        target_branch: gh-pages
+        build_dir: /tmp/docs
+        #docs/_build/html/
+      env:
+        GITHUB_PAT: ${{ secrets.TEST }}
