@@ -45,6 +45,5 @@ jobs:
         keep_history: true
         target_branch: gh-pages
         build_dir: /tmp/docs
-        #docs/_build/html/
       env:
         GITHUB_PAT: ${{ secrets.TEST }}
