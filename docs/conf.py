@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'helloWorld'
-copyright = '2020, Robin Long'
-author = 'Robin Long'
+copyright = '2020, Robin E Long'
+author = 'Robin E Long'
 
 # The short X.Y version
 version = ''
