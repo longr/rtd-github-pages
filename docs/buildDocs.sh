@@ -30,8 +30,8 @@ ls -lah
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
  
 # make a new temp dir which will be our GitHub Pages docroot
-docroot=`mkdir ../docs`
-#mkdir ../docs
+docroot='../docs'
+mkdir ../docs
 
 export REPO_NAME="${GITHUB_REPOSITORY##*/}"
  
