@@ -29,7 +29,7 @@ jobs:
         sudo apt-get update
         sudo apt-get -y install git rsync
         python -m pip install --upgrade pip setuptools wheel
-        python3 -m pip install --upgrade sphinx sphinx-rtd-theme git virtualenv setuptools
+        python3 -m pip install --upgrade sphinx sphinx-rtd-theme gitpython virtualenv setuptools
         python3 -m pip install --upgrade rinohtype pygments
       
     - name: Execute script to build our documentation and update pages
