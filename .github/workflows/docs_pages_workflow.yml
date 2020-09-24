@@ -20,9 +20,15 @@ jobs:
     #    apt-get install -y git
     #    git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
     #  shell: bash
- 
+
+    - name: Install
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools
+        python3 -m pip install --upgrade rinohtype pygments
+      
     - name: Execute script to build our documentation and update pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: "sudo docs/buildDocs.sh"
+        run: "docs/buildDocs.sh"
       shell: bash
