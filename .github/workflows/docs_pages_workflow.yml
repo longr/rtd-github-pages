@@ -8,10 +8,12 @@ jobs:
  
   build_docs_job:
     runs-on: ubuntu-latest
+    python-version: '3.7'
     #container: debian:buster-slim
  
     steps:
     - uses: "actions/checkout@v2"
+    - uses: "actions/setup-python@v1"
     #- name: Prereqs
     #  env:
     #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,7 +26,9 @@ jobs:
     - name: Install
       run: |
         sudo apt-get update
-        sudo apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-virtualenv python3-setuptools
+        sudo apt-get -y install git rsync
+        python -m pip install --upgrade pip setuptools wheel
+        python3 -m pip install --upgrade sphinx sphinx-rtd-theme stemmer git pip virtualenv setuptools
         python3 -m pip install --upgrade rinohtype pygments
       
     - name: Execute script to build our documentation and update pages
