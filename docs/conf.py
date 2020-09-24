@@ -21,7 +21,7 @@
 
 project = 'helloWorld'
 copyright = '2020, Michael Altfield'
-author = 'Michael Altfield'
+author = 'Robin Long'
 
 # The short X.Y version
 version = ''
