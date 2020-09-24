@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'helloWorld'
-copyright = '2020, Michael Altfield'
+copyright = '2020, Robin Long'
 author = 'Robin Long'
 
 # The short X.Y version
