@@ -45,5 +45,6 @@ jobs:
         keep_history: false
         target_branch: gh-pages
         build_dir: ../docs
+        jekyll: false
       env:
         GITHUB_PAT: ${{ secrets.TEST }}
