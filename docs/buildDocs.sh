@@ -110,7 +110,7 @@ git checkout master
  
 # add .nojekyll to the root so that github won't 404 on content added to dirs
 # that start with an underscore (_), such as our "_content" dir..
-touch ${docroot}/.nojekyll
+#touch ${docroot}/.nojekyll
  
 # add redirect from the docroot to our default docs language/version
 cat > "${docroot}/index.html" <<EOF
