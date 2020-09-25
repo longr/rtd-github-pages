@@ -114,6 +114,7 @@ touch .nojekyll
 cat > "${docroot}/index.html" <<EOF
 <!DOCTYPE html>
 <html>
+TEST
 </html>
 EOF
  
