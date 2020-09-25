@@ -40,7 +40,7 @@ jobs:
 
     - name: Deploy
       if: "contains(env.DEPLOY_DOCS, matrix.python-version)"
-      uses: crazy-max/ghaction-github-pages@v1
+      uses: crazy-max/ghaction-github-pages@v2
       with:
         keep_history: false
         target_branch: gh-pages
