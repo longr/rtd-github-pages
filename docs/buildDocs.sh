@@ -32,7 +32,7 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 # make a new temp dir which will be our GitHub Pages docroot
 export docroot='../docs'
 mkdir ../docs
-
+#touch ../docs/.nojekyll
 export REPO_NAME="${GITHUB_REPOSITORY##*/}"
  
 ##############
@@ -111,7 +111,7 @@ git checkout master
  
 # add .nojekyll to the root so that github won't 404 on content added to dirs
 # that start with an underscore (_), such as our "_content" dir..
-touch .nojekyll
+touch ${docroot}/.nojekyll
  
 # add redirect from the docroot to our default docs language/version
 cat > "${docroot}/index.html" <<EOF
