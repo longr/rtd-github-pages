@@ -111,7 +111,7 @@ git checkout master
 touch .nojekyll
  
 # add redirect from the docroot to our default docs language/version
-cat > index.html <<EOF
+cat > "${docroot}/index.html" <<EOF
 <!DOCTYPE html>
 <html>
 #   <head>
