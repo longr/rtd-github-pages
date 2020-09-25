@@ -42,7 +42,7 @@ export REPO_NAME="${GITHUB_REPOSITORY##*/}"
 # first, cleanup any old builds' static assets
 make -C docs clean
 
-rsync -av "docs/" "${docroot}/"
+rsync -av "docs/" "${docroot}"
 
 
 # get a list of branches, excluding 'HEAD' and 'gh-pages'
