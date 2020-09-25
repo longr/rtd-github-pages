@@ -112,8 +112,8 @@ touch .nojekyll
  
 # add redirect from the docroot to our default docs language/version
 cat > index.html <<EOF
-#<!DOCTYPE html>
-#<html>
+<!DOCTYPE html>
+<html>
 #   <head>
 #      <title>helloWorld Docs</title>
 #      <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/master/'" />
@@ -121,7 +121,7 @@ cat > index.html <<EOF
 #   <body>
 #      <p>Please wait while you're redirected to our <a href="/${REPO_NAME}/en/master/">documentation</a#>.</p>
 #   </body>
-#</html>
+</html>
 EOF
  
 # Add README
