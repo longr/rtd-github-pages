@@ -115,9 +115,10 @@ git checkout master
 # add redirect from the docroot to our default docs language/version
 cat > "${docroot}/index.html" <<EOF
 <!DOCTYPE html>
-<html>
-TEST
-</html>
+<meta charset="utf-8">
+<title>Redirecting to https://longr.github.io/rtd-github-pages/en/master/</title>
+<meta http-equiv="refresh" content="0; URL=https://longr.github.io/rtd-github-pages/en/master/">
+<link rel="canonical" href="https://longr.github.io/rtd-github-pages/en/master/">
 EOF
  
 # Add README
